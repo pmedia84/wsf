@@ -2,41 +2,14 @@
 <html data-bs-theme="light" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Up to 100% discount on new Windows &amp; Doors - The Window Support Fund</title>
-    <link rel="canonical" href="https://windowsupportfund.uk/contact.html">
-    <meta property="og:url" content="https://windowsupportfund.uk/contact.html">
-    <meta property="og:type" content="website">
-    <meta name="description" content="Helping homeowners access high quality windows and doors at affordable prices. You could be eligible for a discount up to 100%. Check eligibility now!">
-    <meta property="og:image" content="https://windowsupportfund.uk/assets/img/meta-og-img.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" sizes="180x180" href="assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/android-chrome-512x512.png">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu+Sans:100,200,300,400&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
-    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <?php
+    $page_title='Contact Us - The Window Support Fund';
+    include 'inc/Head.php';
+    ?>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top bg-body py-3 border-bottom">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html" style="max-width: 60%;"><img class="img-fluid" src="assets/img/logo-2.svg" style="max-height: 75px;max-width: 180px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1" style="background: var(--bs-body-bg);">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
-                </ul><a class="btn btn-primary ms-md-2" role="button" href="#check-eligiblity">Check Eligibility</a>
-            </div>
-        </div>
-    </nav>
+    <?php include 'inc/Nav.php'; ?>
     <div class="container hero">
         <div class="row gy-4 gy-md-0">
             <div class="col-md-6 d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-sm-start justify-content-md-start align-items-md-center justify-content-lg-center">
