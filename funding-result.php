@@ -7,7 +7,7 @@ $page_title = "Funding Application Result - Window Support Fund";
  * Prevent Get requests
  */
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-   // header('Location: /');
+    // header('Location: /');
     //exit();
 }
 if (isset($_POST['name'])) {
@@ -23,22 +23,21 @@ if (isset($_POST['name'])) {
     //header('Location: /');
     //exit();
 }
-    /**
-     * load config file
-     */
-    $config_file = $_SERVER['DOCUMENT_ROOT'] . "/config.json";
-    //! check file exists
-    if (!file_exists($config_file)) {
-        $code = 404;
-        $msg = "Config file not found";
-        echo $code . " " . $msg;
-        exit;
-    }else{
-        $config = json_decode(file_get_contents($config_file));
-        $site_key = $config->recaptcha->site_key;
-        $secret_key = $config->recaptcha->secret_key;
-        print_r($config);
-    }
+/**
+ * load config file
+ */
+$config_file = $_SERVER['DOCUMENT_ROOT'] . "/config.json";
+//! check file exists
+if (!file_exists($config_file)) {
+    $code = 404;
+    $msg = "Config file not found";
+    echo $code . " " . $msg;
+    exit;
+} else {
+    $config = json_decode(file_get_contents($config_file));
+    $site_key = $config->recaptcha->site_key;
+    $secret_key = $config->recaptcha->secret_key;
+}
 /**
  * recaptcha tests
  */
@@ -57,27 +56,32 @@ if (isset($verify_data['score']) && $verify_data['score'] < .7) {
 $send_email = new Email();
 $subject = "Window Funding Application";
 $body = "<h1>Window Funding Application</h1>";
-$body .= "<p>Name: ".$name."</p>";
-$body .= "<p>Email: ".$email."</p>";
-$body .= "<p>Phone: ".$phone."</p>";
-$body .= "<p>Post Code: ".$post_code."</p>";
-$body .= "<p>Number of Windows: ".$num_windows."</p>";
-$body .= "<p>Number of Doors: ".$num_doors."</p>";
-$body .= "<p>Approx age of windows and doors: ".$age."</p>";
-$body .= "<p>Other Info: ".$other_info."</p>";
+$body .= "<p>Name: " . $name . "</p>";
+$body .= "<p>Email: " . $email . "</p>";
+$body .= "<p>Phone: " . $phone . "</p>";
+$body .= "<p>Post Code: " . $post_code . "</p>";
+$body .= "<p>Number of Windows: " . $num_windows . "</p>";
+$body .= "<p>Number of Doors: " . $num_doors . "</p>";
+$body .= "<p>Approx age of windows and doors: " . $age . "</p>";
+$body .= "<p>Other Info: " . $other_info . "</p>";
 
 $send_email->sendEmail($subject, $body);
-include 'inc/Head.php';
 ?>
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <?php include 'inc/Head.php'; ?>
+</head>
 
 <body>
-<?php include 'inc/Nav.php'; ?> 
+    <?php include 'inc/Nav.php'; ?>
     <section class="py-5">
         <div class="container">
             <div class="row py-4">
                 <div class="col">
                     <h1>Thank you for your application</h1>
-                    <p class="lead"><?=$name;?>, we will be in touch with you shortly to discuss your Window Funding options.</p>
+                    <p class="lead"><?= $name; ?>, we will be in touch with you shortly to discuss your Window Funding options.</p>
                     <div class="card">
                         <div class="card-header">
                             <h2 class="mb-0">Confirmation</h2>
@@ -85,29 +89,29 @@ include 'inc/Head.php';
                         <div class="card-body">
                             <div class="hstack gap-3">
                                 <p class="card-text text-secondary mb-0">Name</p>
-                                <p class="card-text  mb-0"><?=$name;?></p>
+                                <p class="card-text  mb-0"><?= $name; ?></p>
                             </div>
                             <div class="hstack gap-3">
                                 <p class="card-text text-secondary mb-0">Email</p>
-                                <p class="card-text  mb-0"><?=$email;?></p>
+                                <p class="card-text  mb-0"><?= $email; ?></p>
                             </div>
                             <div class="hstack gap-3">
                                 <p class="card-text text-secondary mb-0">Postcode</p>
-                                <p class="card-text  mb-0"><?=$post_code;?></p>
+                                <p class="card-text  mb-0"><?= $post_code; ?></p>
                             </div>
                             <div class="hstack gap-3">
                                 <p class="card-text text-secondary mb-0">No. of Windows</p>
-                                <p class="card-text  mb-0"><?=$num_windows;?></p>
+                                <p class="card-text  mb-0"><?= $num_windows; ?></p>
                             </div>
                             <div class="hstack gap-3">
                                 <p class="card-text text-secondary mb-0">No. of Doors</p>
-                                <p class="card-text  mb-0"><?=$num_doors;?></p>
+                                <p class="card-text  mb-0"><?= $num_doors; ?></p>
                             </div>
                             <div class="hstack gap-3">
                                 <p class="card-text text-secondary mb-0">Any other information</p>
-                                <p class="card-text  mb-0"><?=$other_info;?></p>
+                                <p class="card-text  mb-0"><?= $other_info; ?></p>
                             </div>
-                          
+
 
                         </div>
                     </div>
