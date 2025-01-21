@@ -1,12 +1,36 @@
+<?php
+
+/**
+ * load config file
+ */
+$config_file = $_SERVER['DOCUMENT_ROOT'] . "/config.json";
+//! check file exists
+if (!file_exists($config_file)) {
+    $code = 404;
+    $msg = "Config file not found";
+    echo $code . " " . $msg;
+    exit;
+} else {
+    $config = json_decode(file_get_contents($config_file));
+    $site_key = $config->recaptcha->site_key;
+}
+?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
+
 <head>
     <?php
-    $page_title='Window and Door funding application - The Window Support Fund';
+    $page_title = 'Window and Door funding application - The Window Support Fund';
     include 'inc/Head.php';
     ?>
-
+    <script src="https://www.google.com/recaptcha/api.js?render=<?= $site_key; ?>" async="false"></script>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("funding-application").submit();
+        }
+    </script>
 </head>
+
 <body>
     <?php include 'inc/Nav.php'; ?>
     <div class="container">
@@ -21,7 +45,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <form method="post" enctype="multipart/form-data" action="funding-result">
+                    <form method="post" enctype="multipart/form-data" action="funding-result" id="funding-application">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -109,7 +133,10 @@
                                 <div><label class="form-label">Tell us anything else about your property</label><textarea class="form-control" placeholder="Tell us anything you think we should know..." name="any-other-info"></textarea></div>
                                 <p class="form-text">Use the above box to tell us anything relevant about your windows and doors. The more information we have the better.</p>
                             </div>
-                        </div><button class="btn btn-primary mb-2" type="submit">Submit request</button>
+                      
+                        </div><button class="btn btn-primary mb-2 g-recaptcha" type="submit" data-sitekey="<?= $site_key; ?>"
+                            data-callback='onSubmit'
+                            data-action='submit'>Submit request</button>
                     </form>
                     <p>By submitting your information in this form you are providing persmission for The Window &amp; Door Fund to contact you regarding funding for you windows &amp; doors. We will only pass your information to our partner network with your permission.</p>
                     <p>Free windows and doors are available to select customers upon reviewing their eligibility. Please note, if you are not eligible for fully funded windows and doors, you may be eligible for partial funding through our partner network.</p>

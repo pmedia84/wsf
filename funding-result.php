@@ -1,11 +1,13 @@
 <?php
-include 'inc/Head.php';
+require 'Classes/Email.php';
+$page_title = "Funding Application Result - Window Support Fund";
+
 
 /**
  * Prevent Get requests
  */
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-    //header('Location: /');
+   // header('Location: /');
     //exit();
 }
 if (isset($_POST['name'])) {
@@ -21,15 +23,51 @@ if (isset($_POST['name'])) {
     //header('Location: /');
     //exit();
 }
-print_r($_POST);
-$name = 'mr applicant';
-$email ='email@email.com';
-$phone = '0897 536363';
-$post_code = 'pe12 9dn';
-$num_windows = 2;
-$num_doors = 3;
-$age = 34;
-$other_info = 'no other info';
+    /**
+     * load config file
+     */
+    $config_file = $_SERVER['DOCUMENT_ROOT'] . "/config.json";
+    //! check file exists
+    if (!file_exists($config_file)) {
+        $code = 404;
+        $msg = "Config file not found";
+        echo $code . " " . $msg;
+        exit;
+    }else{
+        $config = json_decode(file_get_contents($config_file));
+        $site_key = $config->recaptcha->site_key;
+        $secret_key = $config->recaptcha->secret_key;
+        print_r($config);
+    }
+/**
+ * recaptcha tests
+ */
+
+$verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response=' . $_POST['g-recaptcha-response']); //verify the response with the token generated from the user inout
+
+$verify_data = json_decode($verifyResponse, true); //decode the JSON file received from google
+
+//continue the script if the recaptcha score is greater than .7
+if (isset($verify_data['score']) && $verify_data['score'] < .7) {
+    exit('Recaptcha failed');
+}
+/**
+ * run email scripts
+ */
+$send_email = new Email();
+$subject = "Window Funding Application";
+$body = "<h1>Window Funding Application</h1>";
+$body .= "<p>Name: ".$name."</p>";
+$body .= "<p>Email: ".$email."</p>";
+$body .= "<p>Phone: ".$phone."</p>";
+$body .= "<p>Post Code: ".$post_code."</p>";
+$body .= "<p>Number of Windows: ".$num_windows."</p>";
+$body .= "<p>Number of Doors: ".$num_doors."</p>";
+$body .= "<p>Approx age of windows and doors: ".$age."</p>";
+$body .= "<p>Other Info: ".$other_info."</p>";
+
+$send_email->sendEmail($subject, $body);
+include 'inc/Head.php';
 ?>
 
 <body>
@@ -39,7 +77,7 @@ $other_info = 'no other info';
             <div class="row py-4">
                 <div class="col">
                     <h1>Thank you for your application</h1>
-                    <p class="lead"><?=$name;?>, we will be in touch with you shortly to discus your Window Funding options.</p>
+                    <p class="lead"><?=$name;?>, we will be in touch with you shortly to discuss your Window Funding options.</p>
                     <div class="card">
                         <div class="card-header">
                             <h2 class="mb-0">Confirmation</h2>
