@@ -3,7 +3,6 @@
         <div id="navcol-1" class="collapse navbar-collapse d-md-flex justify-content-md-end">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact">Contact Us</a></li>
             </ul><a class="btn btn-primary ms-md-2" role="button" href="/apply-funding">Check Eligibility</a>
         </div>
     </div>
