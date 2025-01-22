@@ -15,8 +15,7 @@
                     <h3 class="fs-6 text-start">Company</h3>
                     <ul class="list-unstyled text-start">
                         <li><a href="contact">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="privacy">Privacy Policy</a></li>
                         <li><a href="#">Become a partner</a></li>
                     </ul>
                 </div>
