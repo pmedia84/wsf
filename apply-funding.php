@@ -1,4 +1,5 @@
 <?php
+$page_title = 'Window and Door funding application - The Window Support Fund';
 
 /**
  * load config file
@@ -17,14 +18,17 @@ if (!file_exists($config_file)) {
 ?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
+
 <head>
-    <?php
-    $page_title = 'Window and Door funding application - The Window Support Fund';
-    include 'inc/Head.php';
-    ?>
+    <?php include 'inc/Head.php';  ?>
     <script src="https://www.google.com/recaptcha/api.js?render=<?= $site_key; ?>" async="false"></script>
     <script>
         function onSubmit(token) {
+            //check if homeowner checkbox is checked
+            if (!document.getElementById("homeowner-checkbox").checked) {
+                alert("You must tell us if you are homeowner.");
+                return;
+            }
             document.getElementById("funding-application").submit();
         }
     </script>
@@ -50,7 +54,7 @@ if (!file_exists($config_file)) {
                                 <div class="mb-3">
                                     <h4>About you...</h4>
                                     <p class="form-text">Important: You are required to be the homeowner to submit this form.</p>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="homeowner-checkbox" required="required"><label class="form-check-label" for="homeowner-checkbox">I am a homeowner</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="homeowner-checkbox" name="homeowner-checkbox" required="required" value="homeowner"><label class="form-check-label" for="homeowner-checkbox">I am a homeowner</label></div>
                                 </div>
                                 <div class="mb-3"><label class="form-label">Your Name</label>
                                     <div class="input-group"><span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
@@ -132,7 +136,7 @@ if (!file_exists($config_file)) {
                                 <div><label class="form-label">Tell us anything else about your property</label><textarea class="form-control" placeholder="Tell us anything you think we should know..." name="any-other-info"></textarea></div>
                                 <p class="form-text">Use the above box to tell us anything relevant about your windows and doors. The more information we have the better.</p>
                             </div>
-                      
+
                         </div><button class="btn btn-primary mb-2 g-recaptcha" type="submit" data-sitekey="<?= $site_key; ?>"
                             data-callback='onSubmit'
                             data-action='submit'>Submit request</button>

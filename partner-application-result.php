@@ -1,6 +1,6 @@
 <?php
 require 'Classes/Email.php';
-$page_title = "Funding Application Result - Window Support Fund";
+$page_title = "Partner Application Result - Window Support Fund";
 
 
 /**
@@ -10,39 +10,25 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     header('Location: /');
     exit();
 }
-//check if the form has been submitted and the recaptcha response is set
-//if the form has not been submitted or the recaptcha response is not set, redirect to the homepage
 if (!isset($_POST['g-recaptcha-response'])) {
-    header('Location: /');
+    header('Location: partner-application');
     exit();
 }
-//if the form has been submitted and the recaptcha response is set, continue with the script
-
 if (isset($_POST['name']) ) {
     $name = htmlspecialchars($_POST['name']);
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $business_name = htmlspecialchars($_POST['business_name']);
     $phone = htmlspecialchars($_POST['phone']);
-    $post_code = htmlspecialchars($_POST['post-code']);
-    $num_windows = htmlspecialchars($_POST['num-windows']);
-    $num_doors = htmlspecialchars($_POST['num-doors']);
-    $age = htmlspecialchars($_POST['age']);
+    $website = htmlspecialchars($_POST['website']);
+    $region = htmlspecialchars($_POST['region']);
+    $additional_info = htmlspecialchars($_POST['additional_info']);
 
-    // Check if any required field is empty
-    if (empty($name) || empty($email) || empty($phone) || empty($post_code) || empty($num_windows) || empty($num_doors) || empty($age)) {
-        header('Location: apply-funding');
+    if (empty($name) || empty($email) || empty($business_name) || empty($phone) || empty($website) || empty($region)) {
+        header('Location: partner-application');
         exit();
     }
-    $other_info = htmlspecialchars($_POST['any-other-info']);
-    //return to apply-funding.php if checkbox has not been checked
-    if (empty($_POST['homeowner-checkbox'])) {
-        header('Location: apply-funding');
-        exit();
-    }
-
-    
-    $home_owner = htmlspecialchars($_POST['homeowner-checkbox']);
 } else {
-    header('Location: apply-funding');
+    header('Location: partner-application');
     exit();
 }
 /**
@@ -76,18 +62,16 @@ if (isset($verify_data['score']) && $verify_data['score'] < .7) {
  * run email scripts
  */
 $send_email = new Email();
-$subject = "Window Funding Application";
-$body = "<h1>Window Funding Application</h1>";
-$body .= "<p>Name: " . $name . "</p>";
-$body .= "<p>Email: " . $email . "</p>";
-$body .= "<p>Phone: " . $phone . "</p>";
-$body .= "<p>Post Code: " . $post_code . "</p>";
-$body .= "<p>Number of Windows: " . $num_windows . "</p>";
-$body .= "<p>Number of Doors: " . $num_doors . "</p>";
-$body .= "<p>Approx age of windows and doors: " . $age . "</p>";
-$body .= "<p>Other Info: " . $other_info . "</p>";
-
-$send_email->sendEmail($subject, $body);
+$subject = "Partner Application from " . $business_name;
+$body = "<h1>Partner Application</h1>";
+$body .= "<p>Name: ".$name."</p>";
+$body .= "<p>Email: ".$email."</p>";
+$body .= "<p>Business Name: ".$business_name."</p>";
+$body .= "<p>Phone: ".$phone."</p>";
+$body .= "<p>Website: ".$website."</p>";
+$body .= "<p>Region: ".$region."</p>";
+$body .= "<p>Additional Info: ".$additional_info."</p>";
+//$send_email->sendEmail($subject, $body);
 ?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
@@ -103,7 +87,7 @@ $send_email->sendEmail($subject, $body);
             <div class="row py-4">
                 <div class="col">
                     <h1>Thank you for your application</h1>
-                    <p class="lead"><?= $name; ?>, we will be in touch with you shortly to discuss your Window Funding options.</p>
+                    <p class="lead"><?= $name; ?>, we will be in touch with you shortly to discuss your Partner application</p>
                     <div class="card">
                         <div class="card-header">
                             <h2 class="mb-0">Confirmation</h2>
@@ -118,20 +102,25 @@ $send_email->sendEmail($subject, $body);
                                 <p class="card-text  mb-0"><?= $email; ?></p>
                             </div>
                             <div class="hstack gap-3">
-                                <p class="card-text text-secondary mb-0">Postcode</p>
-                                <p class="card-text  mb-0"><?= $post_code; ?></p>
+                                <p class="card-text text-secondary mb-0">Phone</p>
+                                <p class="card-text  mb-0"><?= $phone; ?></p>
                             </div>
                             <div class="hstack gap-3">
-                                <p class="card-text text-secondary mb-0">No. of Windows</p>
-                                <p class="card-text  mb-0"><?= $num_windows; ?></p>
+                                <p class="card-text text-secondary mb-0">Website</p>
+                                <p class="card-text  mb-0"><?= $website; ?></p>
                             </div>
                             <div class="hstack gap-3">
-                                <p class="card-text text-secondary mb-0">No. of Doors</p>
-                                <p class="card-text  mb-0"><?= $num_doors; ?></p>
+                                <p class="card-text text-secondary mb-0">Region you cover</p>
+                                <p class="card-text  mb-0"><?= $region; ?></p>
                             </div>
+                            <div class="hstack gap-3">
+                                <p class="card-text text-secondary mb-0">Business Name</p>
+                                <p class="card-text  mb-0"><?= $business_name; ?></p>
+                            </div>
+
                             <div class="hstack gap-3">
                                 <p class="card-text text-secondary mb-0">Any other information</p>
-                                <p class="card-text  mb-0"><?= $other_info; ?></p>
+                                <p class="card-text  mb-0"><?= $additional_info; ?></p>
                             </div>
 
 
@@ -146,10 +135,10 @@ $send_email->sendEmail($subject, $body);
             <div class="row">
                 <div class="col">
                     <h2>What happens next?</h2>
-                    <p class="lead">We will be in touch with you shortly to discuss your Window Funding options.</p>
+                    <p class="lead">We will be in touch with you shortly to discuss your application</p>
                     <p class="lead">During our office hours we will contact as soon as possible after your application, so please expect a call from us within the next 12 to 24 hours.</p>
                     <p class="lead">In the meantime, you can <a href="contact">contact us</a> if you have any questions.</p>
-                    <p>We take the use of your data very seriously, you can <a href="privacy">read our privacy policy</a> to find out more. We will never pass on your information to one of our partner network without your permission.</p>
+
                 </div>
             </div>
         </div>

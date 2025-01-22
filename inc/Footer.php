@@ -16,7 +16,7 @@
                     <ul class="list-unstyled text-start">
                         <li><a href="contact">Contact Us</a></li>
                         <li><a href="privacy">Privacy Policy</a></li>
-                        <li><a href="#">Become a partner</a></li>
+                        <li><a href="partner-application">Become a partner</a></li>
                     </ul>
                 </div>
             </div>
