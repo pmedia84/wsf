@@ -1,10 +1,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 <title><?=$page_title;?></title>
-<link rel="canonical" href="https://windowsupportfund.uk/apply-funding.html">
-<meta property="og:url" content="https://windowsupportfund.uk/apply-funding.html">
+<link rel="canonical" href="https://windowsupportfund.uk/<?=$page_url;?>">
+<meta property="og:url" content="https://windowsupportfund.uk/<?=$page_url;?>">
 <meta property="og:type" content="website">
-<meta name="description" content="Helping homeowners access high quality windows and doors at affordable prices. You could be eligible for a discount up to 100%. Check eligibility now!">
+<meta name="description" content="<?=$meta_description;?>">
 <meta property="og:image" content="https://windowsupportfund.uk/assets/img/meta-og-img.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/img/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">

@@ -1,4 +1,7 @@
 <?php
+$page_title='Up to 100% discount on new Windows &amp; Doors - The Window Support Fund';
+$meta_description="Get up to 100% discount on new Windows &amp; Doors with The Window Support Fund. Find out how much funding you could be entitled to. Simply fill out the form below and one of our friendly team will get in touch with you.";
+$page_url='';
 
 /**
  * load config file
@@ -19,7 +22,6 @@ if (!file_exists($config_file)) {
 <html data-bs-theme="light" lang="en">
 <head>
     <?php
-    $page_title='Up to 100% discount on new Windows &amp; Doors - The Window Support Fund';
     include 'inc/Head.php';
     ?>
     <script type="application/ld+json">

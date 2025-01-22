@@ -1,4 +1,6 @@
-<?php $page_title = "Privacy Policy - Window Support Fund";
+<?php $page_title = "Become a Partner - Window Support Fund";
+    $meta_description="Apply to become a partner with Window Support Fund and help homeowners access quality windows and doors at affordable prices.";
+    $page_url='partner-application';
 /**
  * load config file
  */

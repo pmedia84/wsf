@@ -1,4 +1,8 @@
-<?php $page_title = "Privacy Policy - Window Support Fund"; ?>
+<?php $page_title = "Privacy Policy - Window Support Fund"; 
+    $meta_description="Understand a bit more about how we process your application and how we use the information you provide to us.";
+    $page_url='privacy';
+
+?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 

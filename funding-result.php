@@ -1,7 +1,8 @@
 <?php
 require 'Classes/Email.php';
 $page_title = "Funding Application Result - Window Support Fund";
-
+$meta_description="Thank you for your application, we will be in touch with you shortly to discuss your Window Funding options.";
+$page_url='/funding-result';
 
 /**
  * Prevent Get requests

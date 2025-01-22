@@ -1,7 +1,8 @@
 <?php
 require 'Classes/Email.php';
 $page_title = "Partner Application Result - Window Support Fund";
-
+$meta_description="Thank you for your application, we will be in touch with you shortly to discuss your Partner application.";
+$page_url='partner-application-result';
 
 /**
  * Prevent Get requests

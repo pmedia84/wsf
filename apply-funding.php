@@ -1,6 +1,7 @@
 <?php
 $page_title = 'Window and Door funding application - The Window Support Fund';
-
+$meta_description="Get up to 100% discount on new Windows &amp; Doors with The Window Support Fund. Find out how much funding you could be entitled to. Simply fill out the form, and one of our friendly team will get in touch with you.";
+$page_url='/';
 /**
  * load config file
  */
