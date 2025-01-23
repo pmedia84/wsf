@@ -180,10 +180,10 @@ if (!file_exists($config_file)) {
                             </div>
                             <div class="col-md-6">
                                 <h4>About your property...</h4>
-                                <div class="mb-3"><label class="form-label">Number of Windows</label>
+                                <div class="mb-3"><label class="form-label" for="num-windows">Number of Windows</label>
                                     <div class="input-group"><span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-info">
                                                 <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"></path>
-                                            </svg></span><select class="form-select" name="num-windows">
+                                            </svg></span><select class="form-select" name="num-windows" id="num-windows">
                                             <option value="undefined" selected="">Select number of windows</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -197,10 +197,10 @@ if (!file_exists($config_file)) {
                                             <option value="10+">10+</option>
                                         </select></div>
                                 </div>
-                                <div class="mb-3"><label class="form-label">Number of Doors</label>
+                                <div class="mb-3"><label class="form-label" for="num-doors">Number of Doors</label>
                                     <div class="input-group"><span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-info">
                                                 <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"></path>
-                                            </svg></span><select class="form-select" name="num-doors">
+                                            </svg></span><select class="form-select" name="num-doors" id="num-doors">
                                             <option value="undefined" selected="">Select number of doors</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -214,10 +214,10 @@ if (!file_exists($config_file)) {
                                             <option value="10+">10+</option>
                                         </select></div>
                                 </div>
-                                <div class="mb-3"><label class="form-label">Age of windows &amp; doors (approx)</label>
+                                <div class="mb-3"><label class="form-label" for="age">Age of windows &amp; doors (approx)</label>
                                     <div class="input-group"><span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-info">
                                                 <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"></path>
-                                            </svg></span><select class="form-select" name="age">
+                                            </svg></span><select class="form-select" name="age" id="age">
                                             <option value="undefined" selected="">Approximate age</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -232,7 +232,7 @@ if (!file_exists($config_file)) {
                                             <option value="unsure">Unsure</option>
                                         </select></div>
                                 </div>
-                                <div><label class="form-label">Tell us anything else about your property</label><textarea class="form-control" placeholder="Tell us anything you think we should know..." name="any-other-info"></textarea></div>
+                                <div><label class="form-label" for="any-other-info">Tell us anything else about your property</label><textarea class="form-control" placeholder="Tell us anything you think we should know..." name="any-other-info"></textarea></div>
                                 <p class="form-text">Use the above box to tell us anything relevant about your windows and doors. The more information we have the better.</p>
                             </div>
                         </div><button class="btn btn-primary mb-2 g-recaptcha" type="submit" data-sitekey="<?= $site_key; ?>"

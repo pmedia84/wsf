@@ -78,7 +78,7 @@ if (!file_exists($config_file)) {
                         </div>
                         <div class="mb-3">
                             <label for="website" class="form-label">Website</label>
-                            <input type="text" class="form-control" id="website" name="website" placeholder="Your website">
+                            <input type="text" class="form-control" id="website" name="website" placeholder="Your website address">
                         </div>
                         <div class="mb-3">
                             <label for="region" class="form-label">Select Your Region</label>
