@@ -333,25 +333,7 @@ if (!file_exists($config_file)) {
             </div>
         </div>
     </section>
-    <section class="py-5 mb-4" style="background: var(--primary-100);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2 class="text-start">What do I need to qualify?</h2>
-                    <p class="text-start w-lg-50">We only have some simple criteria to enable you to be considered for the Window Support Fund.</p>
-                </div>
-                <div class="col-md-6">
-                    <ul class="text-start">
-                        <li>Employed</li>
-                        <li>Self Employed</li>
-                        <li>Retired</li>
-                        <li>Homeowner, sole or joint</li>
-                    </ul>
-                    <p class="text-start mb-0">As long as you meet this basic criteria then you can apply.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+   
     <?php include 'inc/Footer.php'; ?>
 
 </body>
