@@ -249,7 +249,7 @@ if (!file_exists($config_file)) {
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Funded Window Replacements</h1>
+                    <h1>High Quality Windows</h1>
                     <p>We provide only the best quality windows for you property. With an A+ rated window you can save money on your energy bill, keep your home warmer and reduce condensation. We have many styles that you can choose from, and you are not limited if you are eligible for our fully funded package either.</p>
                 </div>
             </div>
@@ -285,7 +285,7 @@ if (!file_exists($config_file)) {
                     <h2 class="fw-bold mb-2">Check your eligibility for fully funded windows &amp; doors</h2>
                     <p class="mb-0">Discover if you qualify for fully funded windows and doors! In just a few minutes, you could be one step closer to giving your home a fresh new look.</p>
                 </div>
-                <div class="d-xl-flex align-items-xl-center"><a class="btn btn-light btn-lg fs-5 py-2 px-4" role="button" href="#check-eligibility">Check eligibility now</a></div>
+                <div class="d-xl-flex align-items-xl-center"><a class="btn btn-light btn-lg fs-5 py-2 px-4" role="button" href="#check-eligiblity">Check eligility now</a></div>
             </div>
         </div>
     </section>
@@ -299,56 +299,23 @@ if (!file_exists($config_file)) {
             </div>
             <div class="row g-3">
                 <div class="col-md-4">
-                    <div class="card h-100"><img class="card-img-top w-100 d-block card-img-top" src="assets/img/upvc-door.png">
+                    <div class="card h-100"><img class="img-fluid object-fit-cover card-img-top w-100 d-block card-img-top" src="assets/img/upvc-door.png" style="height: 300px;">
                         <div class="card-body">
                             <h4 class="card-title">UPVC Doors</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 align-self-stretch">
-                    <div class="card h-100"><img class="card-img-top w-100 d-block card-img-top" src="assets/img/pvc-moulded-door.png">
+                    <div class="card h-100"><img class="img-fluid object-fit-cover card-img-top w-100 d-block card-img-top" src="assets/img/pvc-moulded-door.png" style="height: 300px;">
                         <div class="card-body">
                             <h4 class="card-title">UPVC Moulded Doors</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100"><img class="img-fluid object-fit-scale card-img-top w-100 d-block card-img-top" src="assets/img/front-door.jpg">
+                    <div class="card h-100"><img class="img-fluid object-fit-cover card-img-top w-100 d-block card-img-top" src="assets/img/front-door.jpg" style="height: 300px;">
                         <div class="card-body">
                             <h4 class="card-title">Composite Doors</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-5" style="background: var(--secondary-50);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>What are my options for free windows and doors</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6"><img class="rounded img-fluid object-fit-cover" src="assets/img/index-hero-sm.webp" height="100%" style="height: 100%;"></div>
-                <div class="col-md-6">
-                    <div class="vstack gap-3">
-                        <div>
-                            <h3>Fully funded windows &amp; Doors</h3>
-                            <p>Fill out your details in our form and we will let you know if you qualify for fully funded windows and doors. This option is available certain post code areas and suitable for homeowners that meet our qualifying criteria.&nbsp;</p>
-                            <p>The Window Support Fund is committed to helping homeowners that are most in need of having energy efficient Windows and Doors in their home.&nbsp;</p>
-                        </div>
-                        <hr>
-                        <div>
-                            <h3>Partial Funding</h3>
-                            <p>If you don't qualify for our fully funded package, we can still help you. We have generous discounts available with our partner network of installers. You still have the same great choice of energy efficient windows and doors.&nbsp;</p>
-                            <p>With your permission, we will pass your information to one of our approved installers in your area. They will provide you with a no obligation quotation</p>
-                        </div>
-                        <hr>
-                        <div>
-                            <h3>The Window Support Fund payment plan</h3>
-                            <p>With the Window Support Fund, you also have access to the option of spreading the cost of your home improvements.&nbsp;</p>
-                            <p>Our partner network can discuss with you the options that are available.&nbsp;</p>
                         </div>
                     </div>
                 </div>
