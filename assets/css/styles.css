@@ -46,7 +46,12 @@ body {
   place-items: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Ubuntu Sans', serif;
   font-weight: 300;
 }
@@ -72,3 +77,40 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 180px;
 }
 
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+.feather-icon {
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.btn .icon {
+  margin-right: .25rem;
+}
+
+p .feather-icon {
+  margin-right: .25rem;
+}
+
+.icon-btn .icon {
+  margin: 0;
+}
+
+
+.feature-card .bs-icon {
+  color: var(--primary-50);
+}
+
+.feature-card {
+  background-color: var(--secondary-100);
+  padding: 1rem;
+}

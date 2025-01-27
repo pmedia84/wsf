@@ -31,8 +31,8 @@ if (isset($_POST['first_name']) ) {
 
     // Check if any required field is empty
     if (empty($first_name) || empty($surname) || empty($email) || empty($phone) || empty($post_code)) {
-        //header('Location: apply-funding');
-        //exit();
+        header('Location: apply-funding');
+        exit();
     }
     $other_info = htmlspecialchars($_POST['leads_notes']) ?? "No other information provided";
     //return to apply-funding.php if checkbox has not been checked
