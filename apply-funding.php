@@ -1,7 +1,7 @@
 <?php
 $page_title = 'Window and Door funding application - The Window Support Fund';
-$meta_description="Get up to 100% discount on new Windows &amp; Doors with The Window Support Fund. Find out how much funding you could be entitled to. Simply fill out the form, and one of our friendly team will get in touch with you.";
-$page_url='/';
+$meta_description = "Get up to 100% discount on new Windows &amp; Doors with The Window Support Fund. Find out how much funding you could be entitled to. Simply fill out the form, and one of our friendly team will get in touch with you.";
+$page_url = '/';
 /**
  * load config file
  */
@@ -57,10 +57,22 @@ if (!file_exists($config_file)) {
                                     <p class="form-text">Important: You are required to be the homeowner to submit this form.</p>
                                     <div class="form-check"><input class="form-check-input" type="checkbox" id="homeowner-checkbox" name="homeowner-checkbox" required="required" value="homeowner"><label class="form-check-label" for="homeowner-checkbox">I am a homeowner</label></div>
                                 </div>
-                                <div class="mb-3"><label class="form-label">Your Name</label>
-                                    <div class="input-group"><span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
-                                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"></path>
-                                            </svg></span><input class="form-control" type="text" placeholder="Name" autocomplete="name" name="name"></div>
+                                <div class="mb-3 row">
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="first_name">First name</label>
+                                        <div class="input-group"><span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
+                                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"></path>
+                                                </svg></span><input class="form-control" type="text" placeholder="First Name" autocomplete="given-name" name="first_name" id="first_name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label" for="surname">Last name</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
+                                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"></path>
+                                                </svg></span><input class="form-control" type="text" placeholder="Surname" autocomplete="family-name" name="surname" id="surname">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="mb-3"><label class="form-label">Email Address</label>
                                     <div class="input-group"><span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-envelope-at">
@@ -85,8 +97,8 @@ if (!file_exists($config_file)) {
                                 <div class="mb-3"><label class="form-label">Number of Windows</label>
                                     <div class="input-group"><span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-info">
                                                 <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"></path>
-                                            </svg></span><select class="form-select" name="num-windows">
-                                            <option value="undefined" selected="">Select number of windows</option>
+                                            </svg></span><select class="form-select" name="windows_num">
+                                            <option value="0" selected="">Select number of windows</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -102,8 +114,8 @@ if (!file_exists($config_file)) {
                                 <div class="mb-3"><label class="form-label">Number of Doors</label>
                                     <div class="input-group"><span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-info">
                                                 <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"></path>
-                                            </svg></span><select class="form-select" name="num-doors">
-                                            <option value="undefined" selected="">Select number of doors</option>
+                                            </svg></span><select class="form-select" name="doors_num">
+                                            <option value="0" selected="">Select number of doors</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -134,7 +146,7 @@ if (!file_exists($config_file)) {
                                             <option value="unsure">Unsure</option>
                                         </select></div>
                                 </div>
-                                <div><label class="form-label">Tell us anything else about your property</label><textarea class="form-control" placeholder="Tell us anything you think we should know..." name="any-other-info"></textarea></div>
+                                <div><label class="form-label" for="leads_notes">Tell us anything else about your property</label><textarea class="form-control" placeholder="Tell us anything you think we should know..." name="leads_notes"></textarea></div>
                                 <p class="form-text">Use the above box to tell us anything relevant about your windows and doors. The more information we have the better.</p>
                             </div>
 

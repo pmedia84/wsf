@@ -19,21 +19,22 @@ if (!isset($_POST['g-recaptcha-response'])) {
 }
 //if the form has been submitted and the recaptcha response is set, continue with the script
 
-if (isset($_POST['name']) ) {
-    $name = htmlspecialchars($_POST['name']);
+if (isset($_POST['first_name']) ) {
+    $first_name = htmlspecialchars($_POST['first_name']);
+    $surname = htmlspecialchars($_POST['surname']);
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
     $phone = htmlspecialchars($_POST['phone']);
     $post_code = htmlspecialchars($_POST['post-code']);
-    $num_windows = htmlspecialchars($_POST['num-windows']);
-    $num_doors = htmlspecialchars($_POST['num-doors']);
+    $num_windows = htmlspecialchars($_POST['windows_num']);
+    $num_doors = htmlspecialchars($_POST['doors_num']);
     $age = htmlspecialchars($_POST['age']);
 
     // Check if any required field is empty
-    if (empty($name) || empty($email) || empty($phone) || empty($post_code) || empty($num_windows) || empty($num_doors) || empty($age)) {
-        header('Location: apply-funding');
-        exit();
+    if (empty($first_name) || empty($surname) || empty($email) || empty($phone) || empty($post_code)) {
+        //header('Location: apply-funding');
+        //exit();
     }
-    $other_info = htmlspecialchars($_POST['any-other-info']);
+    $other_info = htmlspecialchars($_POST['leads_notes']) ?? "No other information provided";
     //return to apply-funding.php if checkbox has not been checked
     if (empty($_POST['homeowner-checkbox'])) {
         header('Location: apply-funding');
@@ -79,7 +80,7 @@ if (isset($verify_data['score']) && $verify_data['score'] < .7) {
 $send_email = new Email();
 $subject = "Window Funding Application";
 $body = "<h1>Window Funding Application</h1>";
-$body .= "<p>Name: " . $name . "</p>";
+$body .= "<p>Name: " . $first_name . " ".$surname."</p>";
 $body .= "<p>Email: " . $email . "</p>";
 $body .= "<p>Phone: " . $phone . "</p>";
 $body .= "<p>Post Code: " . $post_code . "</p>";
@@ -104,7 +105,7 @@ $send_email->sendEmail($subject, $body);
             <div class="row py-4">
                 <div class="col">
                     <h1>Thank you for your application</h1>
-                    <p class="lead"><?= $name; ?>, we will be in touch with you shortly to discuss your Window Funding options.</p>
+                    <p class="lead"><?= $first_name; ?>, we will be in touch with you shortly to discuss your Window Funding options.</p>
                     <div class="card">
                         <div class="card-header">
                             <h2 class="mb-0">Confirmation</h2>
@@ -112,7 +113,7 @@ $send_email->sendEmail($subject, $body);
                         <div class="card-body">
                             <div class="hstack gap-3">
                                 <p class="card-text text-secondary mb-0">Name</p>
-                                <p class="card-text  mb-0"><?= $name; ?></p>
+                                <p class="card-text  mb-0"><?= $first_name." ".$surname; ?></p>
                             </div>
                             <div class="hstack gap-3">
                                 <p class="card-text text-secondary mb-0">Email</p>
