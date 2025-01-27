@@ -52,10 +52,10 @@ if (!file_exists($config_file)) {
                     <form method="post" enctype="multipart/form-data" action="funding-result" id="funding-application">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="mb-3">
+                            <div class="mb-3">
                                     <h4>About you...</h4>
                                     <p class="form-text">Important: You are required to be the homeowner to submit this form.</p>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="homeowner-checkbox" name="homeowner-checkbox" required="required" value="homeowner"><label class="form-check-label" for="homeowner-checkbox">I am a homeowner</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="homeowner-checkbox" required="required" value="homeowner" name="homeowner-checkbox"><label class="form-check-label" for="homeowner-checkbox">I am a homeowner</label></div>
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-md-6">

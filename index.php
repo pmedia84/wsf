@@ -36,6 +36,11 @@ if (!file_exists($config_file)) {
     <script src="https://www.google.com/recaptcha/api.js?render=<?= $site_key; ?>" async="false"></script>
     <script>
         function onSubmit(token) {
+            //check if homeowner checkbox is checked
+            if (!document.getElementById("homeowner-checkbox").checked) {
+                alert("You must tell us if you are homeowner.");
+                return;
+            }
             document.getElementById("funding-application").submit();
         }
     </script>
@@ -154,7 +159,7 @@ if (!file_exists($config_file)) {
                                 <div class="mb-3">
                                     <h4>About you...</h4>
                                     <p class="form-text">Important: You are required to be the homeowner to submit this form.</p>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="homeowner-checkbox" required="required"><label class="form-check-label" for="homeowner-checkbox">I am a homeowner</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="homeowner-checkbox" required="required" value="homeowner" name="homeowner-checkbox"><label class="form-check-label" for="homeowner-checkbox">I am a homeowner</label></div>
                                 </div>
                                 <div class="mb-3 row">
                                     <div class="col-md-6">

@@ -31,20 +31,22 @@ if (isset($_POST['first_name']) ) {
 
     // Check if any required field is empty
     if (empty($first_name) || empty($surname) || empty($email) || empty($phone) || empty($post_code)) {
-        header('Location: apply-funding');
+        //header('Location: apply-funding');
+        echo" error line 35";
         exit();
     }
     $other_info = htmlspecialchars($_POST['leads_notes']) ?? "No other information provided";
     //return to apply-funding.php if checkbox has not been checked
     if (empty($_POST['homeowner-checkbox'])) {
-        header('Location: apply-funding');
+        ///header('Location: apply-funding');
         exit();
     }
 
     
     $home_owner = htmlspecialchars($_POST['homeowner-checkbox']);
 } else {
-    header('Location: apply-funding');
+    //header('Location: apply-funding');
+    
     exit();
 }
 /**
