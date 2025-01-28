@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+background-color: #f4f4f4;
+margin: 0;
+padding: 0;
+">
+    <div style="
+    padding: .75rem;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;">
+        <img src="https://www.windowsupportfund.uk/assets/img/logo-2.svg" alt="" width="180px" style="max-width: 100%;">
+    </div>
+    <div style="
+    background-color: #fff;
+    padding: .75rem;
+    width: 90%;
+    max-width: 600px;
+    margin: 1rem auto;
+    border-radius: 5px;
+    border: 1px solid #cee0f3;
+    ">
+    <h1>Welcome to the Window Support Fund</h1>
+    <p>Dear {{first_name}},</p>
+    <p>We have got your application for help with your windows and doors project!</p>
+    <h2>Confirmation of your details</h2>
+    <p>First Name: {{first_name}}</p>
+    <p>Last Name: {{surname}}</p>
+    <p>Email: {{email}}</p>
+    <p>Phone: {{phone}}</p>
+    <p>Postcode: {{post-code}}</p>
+    <p>Number of windows: {{windows_num}}</p>
+    <p>Number of doors: {{doors_num}}</p>
+    <p>Any other information: {{other_info}}</p>
+    <h2>What happens next?</h2>
+    <p>One of our team will be in touch with you very soon to discuss your application and to see how we can help you.</p>
+
+    <p>In the meantime, here is a brief summary of how The Window Support Fund Works:</p>
+    <ul>
+        <li>We provide support to those most in need of help towards new windows and doors, we prioritise those most in need and look at every application in it's own merit.</li>
+        <li>We work in select Postcode areas at a time, if you are in one of these areas we could fund up to 100% of your work.</li>
+        <li>We work with a select group of partners in each area have been vetted by us.</li>
+        <li>If you are not eligible for a fully funded package, we will offer to pass you on to a local partner in your area. They will provide you with a no obligation quotation complete with all the options available.</li>
+    </ul>
+    </div>
+    <div style="
+    background-color: #d9e7f2;
+    padding: 1rem;
+    ">
+        <p>You have been sent this email as an auto reply message, originating from the form you filled out.</p>
+        <p>If you have any questions or concerns, please do not hesitate to contact us at <a href="mailto:info@windowsupportfund.uk">info@windowsupportfund.uk</a></p>
+        <h3>Want to opt out of your application?</h3>
+        <p><a href="https://www.windowsupportfund.uk/opt-out/{{email}}">Click here to opt out</a></p>
+    </div>
+</body>
+
+</html>

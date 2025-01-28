@@ -14,13 +14,13 @@ use PHPMailer\PHPMailer\Exception;
 class Email
 {
     private $mail;
-
+    private $email_to;
     public function __construct()
     {
         $this->mail = new PHPMailer(true);
     }
-    public function sendEmail($subject, $body)
-    {
+    public function sendEmail($subject, $body, $email)
+    {   
         /**
          * load config file
          */
@@ -51,7 +51,8 @@ class Email
             $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $this->mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             //recipient info
-            $this->mail->AddAddress($to); //to email
+            $this->mail->AddAddress($email); //to email
+            $this->mail->addBcc($to); //bcc email to admins of the site from config file
             $this->mail->setFrom($from, $fromname);
             //content
             $this->mail->IsHTML(true);
@@ -61,5 +62,6 @@ class Email
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$this->mail->ErrorInfo}";
         }
+
     }
 }
