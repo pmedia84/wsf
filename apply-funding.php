@@ -210,7 +210,7 @@ if (!file_exists($config_file)) {
         <div class="row">
             <div class="col-md-6 col-xl-12">
                 <p>Upon submitting your application, one of our friendly team will be in touch with you to discuss the options available to you. At this point we will let you know if you qualify for fully funded windows and doors. If you do not, we will give you the option of being passed to a member of our partner network.&nbsp;</p>
-                <p>We will only pass your details onto one of our partner netwrok if you give us permission. Your local partner will visit you and go through all the options available to help you transform your home.</p>
+                <p>We will only pass your details onto one of our partner network if you give us permission. Your local partner will visit you and go through all the options available to help you transform your home.</p>
                 <p>All quotations are no obligation.</p>
             </div>
         </div>
