@@ -31,7 +31,7 @@ padding: 0;
     ">
     <h1>Welcome to the Window Support Fund</h1>
     <p>Dear {{first_name}},</p>
-    <p>We have got your application for help with your windows and doors project!</p>
+    <p>We have got your application to help you with your windows and doors.</p>
     <h2>Confirmation of your details</h2>
     <p>First Name: {{first_name}}</p>
     <p>Last Name: {{surname}}</p>
@@ -42,24 +42,27 @@ padding: 0;
     <p>Number of doors: {{doors_num}}</p>
     <p>Any other information: {{other_info}}</p>
     <h2>What happens next?</h2>
-    <p>One of our team will be in touch with you very soon to discuss your application and to see how we can help you.</p>
-
+    <p>A member of our funding team will be in touch with you very soon to discuss your application and to see how we can help you.</p>
     <p>In the meantime, here is a brief summary of how The Window Support Fund Works:</p>
     <ul>
-        <li>We provide support to those most in need of help towards new windows and doors, we prioritise those most in need and look at every application in it's own merit.</li>
-        <li>We work in select Postcode areas at a time, if you are in one of these areas we could fund up to 100% of your work.</li>
-        <li>We work with a select group of partners in each area have been vetted by us.</li>
-        <li>If you are not eligible for a fully funded package, we will offer to pass you on to a local partner in your area. They will provide you with a no obligation quotation complete with all the options available.</li>
+        <li>We provide assistance to homeowners in need of help with replacing windows and doors, this can sometimes be costly. Our support is prioritised for those most in need.</li>
+        <li>The support we offer depends on the homeowners circumstances. This could be a fully installation. However, if you are not eligible for this we can still provide help by offering a large discount</li>
+        <li>In this event, one of our trusted partners will continue with your application.</li>
     </ul>
     </div>
     <div style="
     background-color: #d9e7f2;
     padding: 1rem;
+    width: 90%;
+    max-width: 600px;
+    margin: 1rem auto;
+    font-size: small;
     ">
         <p>You have been sent this email as an auto reply message, originating from the form you filled out.</p>
         <p>If you have any questions or concerns, please do not hesitate to contact us at <a href="mailto:info@windowsupportfund.uk">info@windowsupportfund.uk</a></p>
         <h3>Want to opt out of your application?</h3>
-        <p><a href="https://www.windowsupportfund.uk/opt-out/{{email}}">Click here to opt out</a></p>
+        <p><a href="<?=$_SERVER['REQUEST_SCHEME'];?>://<?=$_SERVER['SERVER_NAME'];?>/opt-out?email={{email}}">Click here to opt out</a></p>
+
     </div>
 </body>
 

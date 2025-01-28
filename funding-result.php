@@ -80,7 +80,7 @@ if (isset($verify_data['score']) && $verify_data['score'] < .7) {
  * run email scripts
  */
 $send_email = new Email();
-$template = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/templates/email/welcome-email.html');
+$template = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/templates/email/welcome-email.php');
 $body = str_replace(
     ['{{first_name}}', '{{surname}}', '{{email}}', '{{phone}}', '{{post-code}}', '{{windows_num}}', '{{doors_num}}', '{{age}}', '{{other_info}}'],
     [$first_name, $surname, $email, $phone, $post_code, $num_windows, $num_doors, $age, $other_info],
