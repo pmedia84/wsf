@@ -1,8 +1,8 @@
 <?php
 require 'Classes/Email.php';
 $page_title = "Funding Application Result - Window Support Fund";
-$meta_description="Thank you for your application, we will be in touch with you shortly to discuss your Window Funding options.";
-$page_url='/funding-result';
+$meta_description = "Thank you for your application, we will be in touch with you shortly to discuss your Window Funding options.";
+$page_url = '/funding-result';
 
 /**
  * Prevent Get requests
@@ -19,7 +19,7 @@ if (!isset($_POST['g-recaptcha-response'])) {
 }
 //if the form has been submitted and the recaptcha response is set, continue with the script
 
-if (isset($_POST['first_name']) ) {
+if (isset($_POST['first_name'])) {
     $first_name = htmlspecialchars($_POST['first_name']);
     $surname = htmlspecialchars($_POST['surname']);
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
@@ -32,7 +32,7 @@ if (isset($_POST['first_name']) ) {
     // Check if any required field is empty
     if (empty($first_name) || empty($surname) || empty($email) || empty($phone) || empty($post_code)) {
         //header('Location: apply-funding');
-        echo" error line 35";
+        echo " error line 35";
         exit();
     }
     $other_info = htmlspecialchars($_POST['leads_notes']) ?? "No other information provided";
@@ -42,11 +42,11 @@ if (isset($_POST['first_name']) ) {
         exit();
     }
 
-    
+
     $home_owner = htmlspecialchars($_POST['homeowner-checkbox']);
 } else {
     //header('Location: apply-funding');
-    
+
     exit();
 }
 /**
@@ -79,17 +79,18 @@ if (isset($verify_data['score']) && $verify_data['score'] < .7) {
 /**
  * run email scripts
  */
+$opt_out_url = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['SERVER_NAME'] . '/opt-out?email=' . $email;
 $send_email = new Email();
-$template = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/templates/email/welcome-email.php');
+$template = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/templates/email/welcome-email.html');
 $body = str_replace(
-    ['{{first_name}}', '{{surname}}', '{{email}}', '{{phone}}', '{{post-code}}', '{{windows_num}}', '{{doors_num}}', '{{age}}', '{{other_info}}'],
-    [$first_name, $surname, $email, $phone, $post_code, $num_windows, $num_doors, $age, $other_info],
+    ['{{first_name}}', '{{surname}}', '{{email}}', '{{phone}}', '{{post-code}}', '{{windows_num}}', '{{doors_num}}', '{{age}}', '{{other_info}}', '{{opt_out_url}}'],
+    [$first_name, $surname, $email, $phone, $post_code, $num_windows, $num_doors, $age, $other_info, $opt_out_url],
     $template
 );
 $subject = "Window Funding Application";
 
 
-$send_email->sendEmail($subject, $body,$email);
+$send_email->sendEmail($subject, $body, $email);
 ?>
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
@@ -113,7 +114,7 @@ $send_email->sendEmail($subject, $body,$email);
                         <div class="card-body">
                             <div class="hstack gap-3">
                                 <p class="card-text text-secondary mb-0">Name</p>
-                                <p class="card-text  mb-0"><?= $first_name." ".$surname; ?></p>
+                                <p class="card-text  mb-0"><?= $first_name . " " . $surname; ?></p>
                             </div>
                             <div class="hstack gap-3">
                                 <p class="card-text text-secondary mb-0">Email</p>

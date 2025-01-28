@@ -28,7 +28,6 @@ if (!file_exists($config_file)) {
 <body>
     <?php include 'inc/Nav.php'; 
     
-    foreach ($_SERVER as $parm => $value)  echo "$parm = '$value'\n";
     ?>
     <div class="container">
         <div class="row">
